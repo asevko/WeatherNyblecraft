@@ -83,7 +83,6 @@ extension UserViewModel {
         case .Login:
             Auth.auth().signIn(withEmail: user.username, password: user.password, completion: { (user, error) in
                 if user != nil {
-                    Service.settingsManager.save(value: self.user.username.validate(), for: KeyPath.user.rawValue)
                     completion(nil)
                 } else {
                     if let currentError = error?.localizedDescription {
@@ -94,7 +93,6 @@ extension UserViewModel {
         case .SignUp:
             Auth.auth().createUser(withEmail: user.username, password: user.password, completion: { (user, error) in
                 if user != nil {
-                    Service.settingsManager.save(value: self.user.username.validate(), for: KeyPath.user.rawValue)
                     completion(nil)
                 }else {
                     if let currentError = error?.localizedDescription {

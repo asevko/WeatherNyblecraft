@@ -22,27 +22,25 @@ class StorageService {
         return instance
     }
     
-    private var path = "users"
+    var requestsRef: DatabaseReference {
+        ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        return (ref?.child("users/\(userID!)/requests"))!
+    }
     
     private var ref: DatabaseReference?
 }
 
 extension StorageService {
     
-    func registerUser() {
-        ref = Database.database().reference()
-        let username = Service.settingsManager.value(for: KeyPath.user.rawValue) as! String
-        ref?.child(path).observe(.value, with: { (snap) in
-            if !snap.hasChild(username) {
-                self.ref?.child(self.path).child(username).setValue(username)
-            }
-        })
-    
-    }
-    
     func save(data weather: WeatherData) {
+        let userID = Auth.auth().currentUser?.uid
         ref = Database.database().reference()
-        
+        let key = self.ref?.child("users/\(userID!)/requests").childByAutoId().key
+        let childUpdates = ["users/\(userID!)/requests/\(key!)": weather.toDatabaseFormat()]
+        self.ref?.updateChildValues(childUpdates)
     }
     
 }
+
+
