@@ -22,6 +22,10 @@ class StorageService {
         return instance
     }
     
+    private init() {
+        Database.database().isPersistenceEnabled = true
+    }
+    
     var requestsRef: DatabaseReference {
         ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid

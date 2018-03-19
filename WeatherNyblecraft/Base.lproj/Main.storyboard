@@ -103,6 +103,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No internet ;(" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxf-sj-bBP">
+                                <rect key="frame" x="16" y="310" width="290" height="35"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -118,6 +125,7 @@
                         <outlet property="lat" destination="Ydf-R0-1zR" id="fEg-kP-6B4"/>
                         <outlet property="long" destination="SPM-Sh-62N" id="fDq-sL-iWH"/>
                         <outlet property="lowerInfo" destination="ebl-E5-l5f" id="0Xw-ij-3JP"/>
+                        <outlet property="noInternet" destination="dxf-sj-bBP" id="peQ-6n-cJj"/>
                         <outlet property="summary" destination="wuM-3C-qJC" id="Mzi-gd-VhD"/>
                         <outlet property="temerature" destination="Egi-s5-0pt" id="L8k-EY-FIz"/>
                         <outlet property="time" destination="IR2-2D-vCo" id="o6h-BE-VfW"/>

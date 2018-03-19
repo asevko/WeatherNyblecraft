@@ -23,6 +23,8 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var summary: UILabel!
     
+    @IBOutlet weak var noInternet: UILabel!
+    
     private var firstLaunch: Bool?
     
     override func viewDidLoad() {
@@ -65,6 +67,7 @@ extension WeatherViewController {
             case .Invalid(let error):
                 MBProgressHUD.hide(for: self.view, animated: true)
                 self.displayErrorMessage(errorMessage: error)
+                self.showSadCapture()
             }
         }
     }
@@ -90,6 +93,11 @@ extension WeatherViewController {
         summary.text = weatherModel.summary
         time.text = weatherModel.time
         weatherIcon.image = UIImage(named: weatherModel.icon)
+    }
+    
+    private func showSadCapture() {
+        noInternet.isHidden = false
+        weatherIcon.image = UIImage(named: "no-internet")
     }
     
 }
