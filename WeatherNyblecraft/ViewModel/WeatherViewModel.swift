@@ -21,7 +21,7 @@ class WeatherViewModel {
     
 }
 
-    // MARK - Getters
+// MARK: - getters
 extension WeatherViewModel {
     
     var place: Place {
@@ -63,6 +63,10 @@ extension WeatherViewModel {
         return weathers
     }
     
+    func getWeather(at index: Int) -> WeatherData {
+        return weathers[index]
+    }
+    
 }
 
 
@@ -82,6 +86,7 @@ extension WeatherViewModel {
     
 }
 
+// MARK: - implementing database events
 extension WeatherViewModel {
     
     func subscribeOnFirstLoad(_ completion: @escaping()-> Void) {
@@ -124,7 +129,7 @@ extension WeatherViewModel {
     }
 }
 
-
+// MARK: - private functions
 extension WeatherViewModel {
     
     private func addPostfix(to: inout String)  {
@@ -155,7 +160,6 @@ extension WeatherViewModel {
     }
     
 }
-
 
 
 

@@ -23,22 +23,20 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var summary: UILabel!
     
+    private var firstLaunch: Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //MBProgressHUD.showAdded(to: self.view, animated: true)
-        
+        firstLaunch = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        request()
+        if firstLaunch! {
+            firstLaunch = false
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            request()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -9,11 +9,17 @@
 import UIKit
 import FirebaseAuth
 
+protocol WeatherDelegate {
+    func didSelectWeatherData(weather: WeatherData)
+}
+
 class RecentViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     
     private var weatherModel = WeatherViewModel()
+    
+    var delegate: WeatherDelegate! = nil
     
     
     override func viewDidLoad() {
@@ -24,7 +30,7 @@ class RecentViewController: UIViewController {
         
         subcsribe()
     }
- 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,6 +49,13 @@ class RecentViewController: UIViewController {
         }
         alert.addAction(logOut)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CellToPopup" {
+            let popupViewController = segue.destination as? PopupViewController
+            popupViewController?.weather = sender as? WeatherData
+        }
     }
     
     
@@ -74,6 +87,11 @@ extension RecentViewController: UITableViewDelegate, UITableViewDataSource {
         return 100
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let weather = weatherModel.getWeather(at: indexPath.row)
+        self.performSegue(withIdentifier: "CellToPopup", sender: weather)
+    }
+    
 }
 
 
@@ -83,15 +101,21 @@ private extension RecentViewController {
 //        weatherModel.subscribeOnFirstLoad {
 //            self.table.reloadData()
 //        }
-//        
+//
         weatherModel.subscribeOnDelete {
-            self.table.reloadData()
+            self.reloadData()
         }
         
         weatherModel.subscribeOnAdding {
-            self.table.reloadData()
+            self.reloadData()
         }
         
+    }
+    
+    private func reloadData() {
+        DispatchQueue.main.async {
+             self.table.reloadData()
+        }
     }
     
 }

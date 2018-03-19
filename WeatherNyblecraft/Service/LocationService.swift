@@ -49,7 +49,6 @@ class LocationService: NSObject {
     private override init() {
         super.init()
         setLocationManager()
-        print("1")
     }
 
 }
@@ -68,13 +67,14 @@ extension LocationService: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
         
         guard let location = locations.first, location.coordinate.latitude != 0 && location.coordinate.longitude != 0 else {
             return
         }
-        print("5")
+        
         currentLocation = location
+        locationManager.delegate = nil
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

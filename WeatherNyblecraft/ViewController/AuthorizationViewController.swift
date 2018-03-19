@@ -105,11 +105,6 @@ private extension AuthorizationViewController {
     }
     
     func gotoForecast() {
-//        if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController {
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//            appDelegate.window?.rootViewController!.present(tabBarVC, animated: true, completion: nil)
-//        }
-       
         self.performSegue(withIdentifier: "AuthToMainSegue", sender: self)
     }
     

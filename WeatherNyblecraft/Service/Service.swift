@@ -10,10 +10,6 @@ import Foundation
 
 class Service {
     
-    static var settingsManager: SettingsService {
-        return SettingsService.shared
-    }
-    
     static var locationManager: LocationService {
         return LocationService.shared
     }

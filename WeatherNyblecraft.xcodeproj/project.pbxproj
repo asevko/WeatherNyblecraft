@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		62194DC72059DFB2002F4A76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62194DC62059DFB2002F4A76 /* GoogleService-Info.plist */; };
 		621BFC01205AAB9B00669406 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621BFC00205AAB9B00669406 /* Service.swift */; };
-		621BFC03205AABD600669406 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621BFC02205AABD600669406 /* SettingsService.swift */; };
 		623E0871205B195700FBD34B /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623E0870205B195700FBD34B /* LocationService.swift */; };
 		623E0873205B1CE100FBD34B /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623E0872205B1CE100FBD34B /* WeatherViewModel.swift */; };
 		625952702059CD3200236F10 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6259526F2059CD3200236F10 /* UIViewControllerExtension.swift */; };
@@ -26,6 +25,8 @@
 		626928E9205DD86B002CB3AC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626928E8205DD86B002CB3AC /* StringExtension.swift */; };
 		62A7D7C2205BFDCD0014BE4F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A7D7C1205BFDCD0014BE4F /* Configuration.swift */; };
 		62A7D7C4205C044D0014BE4F /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A7D7C3205C044D0014BE4F /* WeatherData.swift */; };
+		62C60F67205FD4E800E03A98 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C60F66205FD4E800E03A98 /* PopupViewController.swift */; };
+		62C60F6A206001DA00E03A98 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C60F69206001DA00E03A98 /* NotificationNameExtension.swift */; };
 		62CD19FD205DB83B00AC583F /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD19FC205DB83B00AC583F /* WeatherTableViewCell.swift */; };
 		62E85E7A205C609000B709A3 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E85E79205C609000B709A3 /* Place.swift */; };
 		62E85E7C205C68BC00B709A3 /* WeatehrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E85E7B205C68BC00B709A3 /* WeatehrService.swift */; };
@@ -35,7 +36,6 @@
 /* Begin PBXFileReference section */
 		62194DC62059DFB2002F4A76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		621BFC00205AAB9B00669406 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		621BFC02205AABD600669406 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		623E0870205B195700FBD34B /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		623E0872205B1CE100FBD34B /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		6259526F2059CD3200236F10 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -54,6 +54,8 @@
 		626928E8205DD86B002CB3AC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		62A7D7C1205BFDCD0014BE4F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		62A7D7C3205C044D0014BE4F /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		62C60F66205FD4E800E03A98 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		62C60F69206001DA00E03A98 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		62CD19FC205DB83B00AC583F /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		62E85E79205C609000B709A3 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		62E85E7B205C68BC00B709A3 /* WeatehrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatehrService.swift; sourceTree = "<group>"; };
@@ -85,7 +87,9 @@
 		62194DBD2059DCCA002F4A76 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				626928E8205DD86B002CB3AC /* StringExtension.swift */,
 				6259526F2059CD3200236F10 /* UIViewControllerExtension.swift */,
+				62C60F69206001DA00E03A98 /* NotificationNameExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -94,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				621BFC00205AAB9B00669406 /* Service.swift */,
-				621BFC02205AABD600669406 /* SettingsService.swift */,
 				623E0870205B195700FBD34B /* LocationService.swift */,
 				62E85E7B205C68BC00B709A3 /* WeatehrService.swift */,
 				626928E6205DD64E002CB3AC /* StorageService.swift */,
@@ -117,6 +120,7 @@
 				6265B2C32059BF340047E618 /* AuthorizationViewController.swift */,
 				6265B2AF2059B8D60047E618 /* WeatherViewController.swift */,
 				6265B2B12059B8D60047E618 /* RecentViewController.swift */,
+				62C60F66205FD4E800E03A98 /* PopupViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -165,7 +169,6 @@
 				6265B2BB2059B8D60047E618 /* Info.plist */,
 				62194DC62059DFB2002F4A76 /* GoogleService-Info.plist */,
 				62CD19FC205DB83B00AC583F /* WeatherTableViewCell.swift */,
-				626928E8205DD86B002CB3AC /* StringExtension.swift */,
 			);
 			path = WeatherNyblecraft;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62A7D7C2205BFDCD0014BE4F /* Configuration.swift in Sources */,
+				62C60F67205FD4E800E03A98 /* PopupViewController.swift in Sources */,
 				6265B2C42059BF340047E618 /* AuthorizationViewController.swift in Sources */,
 				6265B2B22059B8D60047E618 /* RecentViewController.swift in Sources */,
 				62E85E7C205C68BC00B709A3 /* WeatehrService.swift in Sources */,
@@ -345,8 +349,8 @@
 				625952702059CD3200236F10 /* UIViewControllerExtension.swift in Sources */,
 				626928E9205DD86B002CB3AC /* StringExtension.swift in Sources */,
 				6265B2B02059B8D60047E618 /* WeatherViewController.swift in Sources */,
-				621BFC03205AABD600669406 /* SettingsService.swift in Sources */,
 				62A7D7C4205C044D0014BE4F /* WeatherData.swift in Sources */,
+				62C60F6A206001DA00E03A98 /* NotificationNameExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
