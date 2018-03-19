@@ -24,7 +24,7 @@ struct WeatherData {
 
 
 extension WeatherData {
-    
+    // trick with converting Date to Double is made because Firebase can't store NSDate
     func toDatabaseFormat() -> [String: Any] {
         let formattedTime = time.timeIntervalSince1970
         let dataInRightFormat: [String: Any] =
@@ -32,7 +32,6 @@ extension WeatherData {
             "temperature": temperature,
             "windSpeed": windSpeed,
             "icon": icon,
-//            "time": String.string(from: time),
             "time": formattedTime,
             "lattitude": lat,
             "longtitude": long,

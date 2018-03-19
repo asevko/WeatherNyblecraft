@@ -27,6 +27,7 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         firstLaunch = true
     }
     
@@ -52,6 +53,7 @@ class WeatherViewController: UIViewController {
 
 }
 
+// MARK: - Working with weather
 extension WeatherViewController {
     
     func request() {
@@ -75,7 +77,7 @@ extension WeatherViewController {
     
 }
 
-
+// MARK: - Private methods
 extension WeatherViewController {
 
     private func decoreView() {

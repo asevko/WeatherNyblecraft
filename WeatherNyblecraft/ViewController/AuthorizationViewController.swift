@@ -32,7 +32,6 @@ class AuthorizationViewController: UIViewController {
     }
     
     // MARK: - Actions
-
     @IBAction func changeState(_ sender: UISegmentedControl) {
         actionButton.setTitle(sender.titleForSegment(at: sender.selectedSegmentIndex), for: .normal)
     }
@@ -58,7 +57,7 @@ class AuthorizationViewController: UIViewController {
 
 }
 
-//MARK: - TextFieldDelegate
+//MARK: - Implementing TextFieldDelegate
 extension AuthorizationViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == usernameField {
@@ -96,7 +95,7 @@ extension AuthorizationViewController: UITextFieldDelegate {
 
 }
 
-//MARK: - private methods
+//MARK: - Private methods
 private extension AuthorizationViewController {
     func displayErrorMessage(errorMessage: String) {
         let alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)

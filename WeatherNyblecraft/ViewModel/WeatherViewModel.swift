@@ -21,7 +21,7 @@ class WeatherViewModel {
     
 }
 
-// MARK: - getters
+// MARK: - Getters
 extension WeatherViewModel {
     
     var place: Place {
@@ -69,7 +69,7 @@ extension WeatherViewModel {
     
 }
 
-
+// MARK: - Weather request
 extension WeatherViewModel {
     
     func requestWeatehr(completion: @escaping(_ type: RequestValidationState) -> Void) {
@@ -86,22 +86,8 @@ extension WeatherViewModel {
     
 }
 
-// MARK: - implementing database events
+// MARK: - Implementing database events
 extension WeatherViewModel {
-    
-    func subscribeOnFirstLoad(_ completion: @escaping()-> Void) {
-        Service.storageManager.requestsRef.observeSingleEvent(of: .value, with: { (snap) in
-            let dataDictionary = snap.value as! [String: Any]
-            dataDictionary.forEach { (key, body) in
-                let body = body as! [String: Any]
-               
-                let weather = self.dictionaryToWeather(dict: body)
-                
-                self.weathers.append(weather)
-                completion()
-            }
-        })
-    }
     
     func subscribeOnDelete(_ completion: @escaping()-> Void) {
         Service.storageManager.requestsRef.observe(.childRemoved) { (snap) in
@@ -129,7 +115,7 @@ extension WeatherViewModel {
     }
 }
 
-// MARK: - private functions
+// MARK: - Private functions
 extension WeatherViewModel {
     
     private func addPostfix(to: inout String)  {

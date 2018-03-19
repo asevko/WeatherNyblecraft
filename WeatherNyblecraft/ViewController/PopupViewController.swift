@@ -40,6 +40,8 @@ class PopupViewController: UIViewController {
     
 }
 
+
+// MARK: - Filling view with data
 extension PopupViewController {
     
     func decore() {
@@ -58,7 +60,7 @@ extension PopupViewController {
     
 }
 
-// MARK: - overriding touches
+// MARK: - Overriding touches
 extension PopupViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

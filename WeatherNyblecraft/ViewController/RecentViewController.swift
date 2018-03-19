@@ -36,6 +36,7 @@ class RecentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Actions
     @IBAction func logOut(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: "Are you shure that you want to log out?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -51,6 +52,8 @@ class RecentViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CellToPopup" {
             let popupViewController = segue.destination as? PopupViewController
@@ -65,7 +68,7 @@ class RecentViewController: UIViewController {
     
 }
 
-
+// MARK: - Implementing TableViewDelegate
 extension RecentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,14 +97,11 @@ extension RecentViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-
+// MARK: - Working with remote data
 private extension RecentViewController {
     
     func subcsribe() {
-//        weatherModel.subscribeOnFirstLoad {
-//            self.table.reloadData()
-//        }
-//
+        
         weatherModel.subscribeOnDelete {
             self.reloadData()
         }

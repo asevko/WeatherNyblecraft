@@ -29,6 +29,7 @@ class WeatherService {
 
 }
 
+// MARK: - Configuration SwiftSky API
 extension WeatherService {
     private func configure() {
         SwiftSky.secret = "f9fe9dc21091815de1590da09e75e0e3"
@@ -38,6 +39,7 @@ extension WeatherService {
     }
 }
 
+// MARK: - Requesting weather
 extension WeatherService {
     
     func getWeather(completion: @escaping(_ weather: WeatherData?, _ error: String?) -> Void) {

@@ -104,27 +104,3 @@ extension UserViewModel {
     }
     
 }
-
-enum KeyPath: String {
-    case user = "user"
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

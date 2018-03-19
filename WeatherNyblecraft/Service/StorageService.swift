@@ -31,6 +31,8 @@ class StorageService {
     private var ref: DatabaseReference?
 }
 
+
+// MARK: - Working with firebase API
 extension StorageService {
     
     func save(data weather: WeatherData) {

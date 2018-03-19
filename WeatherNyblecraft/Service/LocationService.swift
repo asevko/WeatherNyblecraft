@@ -24,7 +24,17 @@ class LocationService: NSObject {
         }
         return instance
     }
+    
+    private override init() {
+        super.init()
+        setLocationManager()
+    }
 
+}
+
+// MARK: - Getters
+extension LocationService {
+    
     var latitude: Double {
         if currentLocation != nil {
             return currentLocation.coordinate.latitude
@@ -45,14 +55,9 @@ class LocationService: NSObject {
         let longitude = currentLocation.coordinate.longitude
         return (latitude, longitude)
     }
-    
-    private override init() {
-        super.init()
-        setLocationManager()
-    }
-
 }
 
+// MARK: - Implementing CLLocationManagerDelegate
 extension LocationService: CLLocationManagerDelegate {
     func setLocationManager() {
         locationManager.requestAlwaysAuthorization()
@@ -82,7 +87,7 @@ extension LocationService: CLLocationManagerDelegate {
     }
 }
 
-
+// MARK: - Place requesting
 extension LocationService {
     
     func getPlace(completion: @escaping (_ address: Place?, _ error: Error?) -> ()) {
@@ -104,4 +109,3 @@ extension LocationService {
         }
     }
 }
-

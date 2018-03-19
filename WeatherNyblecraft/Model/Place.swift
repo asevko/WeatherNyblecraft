@@ -13,6 +13,9 @@ struct Place {
     var city: String = ""
     var street: String = ""
     var houseNumber: String = ""
+}
+
+extension Place {
     
     var topDescription: String {
         return String("\(city), \(country.uppercased())")
